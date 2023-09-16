@@ -1,9 +1,8 @@
 :root {
-    --pink-lavender: #F1C0E0ff;
-    --tekhelet: #5D2595ff;
-    --amethyst: #9D64D7ff;
-    --veronica: #AD14EAff;
-    --paynes-gray: #597591ff;
+    --pink: rgba(230, 75, 67, 1);
+    --fandango: rgba(56, 216, 224, 1);
+    --tan: rgba(252, 125, 119, 1);
+    --nyanza: rgba(49, 119, 122, 1);
 }
 
 *, body {
@@ -15,43 +14,102 @@
 body {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     font-family: sans-serif;
-    background-color: var(--pink-lavender);
+    background-color: var(--pink);
     text-align: center;
     transition: background-color 0.4s linear;
     min-height: 100vh;
-    margin: 0;
 }
 
 .tab-nav-container {
+    /* position: fixed; */
     background-color: #fff;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     padding: 30px;
-    width: 450px;
+    /* width: 450px; */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
         0 3px 6px rgba(0, 0, 0, 0.23);
 
 }
 
-.tab {}
+.tab {
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background-color 0.4s linear;
+}
 
-.active {}
+.tab i {
+    font-size: 1.2em;
+}
 
-.purple {}
+.tab p {
+    font-weight: bold;
+    overflow: hidden;
+    max-width: 0;
+}
 
-.fas {}
+.tab.active p {
+    margin-left: 10px;
+    max-width: 200px;
+    transition: max-width 0.4s linear;
+}
 
-.fa-home {}
+.tab.active.pink {
+    background-color: rgba(230, 75, 67, 0.2);
+    color: var(--pink);
+}
 
-.fa-heart {}
+.tab.active.fandango {
+    background-color: rgba(56, 216, 224, 0.2);
+    color: var(--fandango);
+}
 
-.fa-search {}
+.tab.active.tan {
+    background-color: rgba(252, 125, 119, 0.2);
+    color: var(--tan);
+}
 
-.fa-user {}
+.tab.active.nyanza {
+    background-color: rgba(49, 119, 122, 0.6);
+    color: var(--nyanza);
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:450px) {
+    .tab-nav-container {
+        max-width: 350px;
+        padding: 10px 10px;
+    }
+
+    .tab {
+        padding: 5px 10px;
+        margin: 0 5px;
+    }
+
+    .tab i {
+        font-size: 1em;
+    }
+
+    .tab p {
+        display: none;
+    }
+}
